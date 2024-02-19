@@ -80,15 +80,30 @@ public class Guitar {
     }
 
     public void setType(String type) {
-        this.type = Type.valueOf(type);
+        try{
+            this.type = Type.valueOf(type);
+        }
+        catch (IllegalArgumentException e){
+            this.type = null;
+        }
     }
 
     public void setBackWood(String backWood) {
-        this.backWood = Wood.valueOf(backWood);
+        try{
+            this.backWood = Wood.valueOf(backWood);
+        }
+        catch (IllegalArgumentException e){
+            this.backWood = null;
+        }
     }
 
     public void setTopWood(String topWood) {
-        this.topWood = Wood.valueOf(topWood);
+        try{
+            this.topWood = Wood.valueOf(topWood);
+        }
+        catch (IllegalArgumentException e){
+            this.topWood = null;
+        }
     }
 
     public double getPrice(){

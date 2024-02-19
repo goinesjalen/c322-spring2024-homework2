@@ -1,0 +1,9 @@
+1, 123.00, Fender, Strato, Acoustic, Maple, Maple
+12, 1234.00, Fender, Strato, Acoustic, Maple, Maple
+0001, 125.00, Fender, Strato, Electric, Maple, Maple
+0002, 125.00, Fender, Strato, Electric, Maple, Maple
+0003, 125.00, Fender, Strato, Electric, Maple, Maple
+0004, 125.00, Fender, Strato, Electric, Maple, Maple
+01, 1.00, Fender, Strasto, Electric, Maple, Maple
+, 0.00, Fender, , null, null, null
+001, 100.00, Fender, Strato, Electric, Maple, Maple
