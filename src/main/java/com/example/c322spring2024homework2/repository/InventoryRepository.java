@@ -20,7 +20,7 @@ public class InventoryRepository {
     public boolean addGuitar(Guitar newGuitar){
 
         // Define the directory and file names
-        String directoryName = "c322spring2024homework2";
+        String directoryName = "src";
         String fileName = "guitars_database.txt";
 
         // Create a Path object for the directory
@@ -30,7 +30,7 @@ public class InventoryRepository {
         Path filePath = directoryPath.resolve(fileName);
 
 
-        File myFile = new File(String.valueOf(filePath));
+        File myFile = filePath.toFile();
         try(PrintWriter pw = new PrintWriter(new FileOutputStream(myFile, true))){
             String output = newGuitar.toString();
             pw.println(output);
