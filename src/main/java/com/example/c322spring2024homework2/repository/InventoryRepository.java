@@ -19,16 +19,8 @@ public class InventoryRepository {
     List<Guitar> guitars = new ArrayList<>();
     public boolean addGuitar(Guitar newGuitar){
 
-        // Define the directory and file names
-        String directoryName = "src";
-        String fileName = "guitars_database.txt";
-
         // Create a Path object for the directory
-        Path directoryPath = Paths.get(directoryName);
-
-        // Combine the directory path and file name to create the full path
-        Path filePath = directoryPath.resolve(fileName);
-
+        Path filePath = Paths.get("src/main/java/com/example/c322spring2024homework2/guitars_database.txt");
 
         File myFile = filePath.toFile();
         try(PrintWriter pw = new PrintWriter(new FileOutputStream(myFile, true))){
