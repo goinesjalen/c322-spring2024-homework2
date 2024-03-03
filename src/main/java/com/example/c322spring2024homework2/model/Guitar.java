@@ -1,15 +1,57 @@
 package com.example.c322spring2024homework2.model;
 
 public class Guitar {
+    public enum Builder {
+        FENDER, MARTIN, GIBSON, COLLINGS, OLSON, RYAN, PRS, ANY;
+        public String toString() {
+            switch (this) {
+                case FENDER -> { return "Fender"; }
+                case MARTIN -> { return "Martin"; }
+                case GIBSON -> { return "Gibson"; }
+                case COLLINGS -> { return "Collings"; }
+                case OLSON -> { return "Olsen"; }
+                case RYAN -> { return "Ryan"; }
+                case PRS -> { return "PRS"; }
+                default -> { return "Unspecified"; }
+            }
+        }
+    }
+    public enum Type {
+        ELECTRIC, ACOUSTIC;
+        public String toString() {
+            switch (this) {
+                case ACOUSTIC -> { return "Acoustic"; }
+                case ELECTRIC -> { return "Electric"; }
+                default -> { return "Unspecified"; }
+            }
+        }
+    }
+    public enum Wood {
+        INDIAN_ROSEWOOD, BRAZILLIAN_ROSEWOOD, MAHOGANY, MAPLE, COCOBOLO, CEDAR, ADIRONDACK, ALDER, SITKA;
+        public String toString() {
+            switch (this) {
+                case INDIAN_ROSEWOOD -> { return "Indian Rosewood"; }
+                case BRAZILLIAN_ROSEWOOD -> { return "Brazillian Rosewood"; }
+                case MAHOGANY -> { return "Mahogany"; }
+                case MAPLE -> { return "Maple"; }
+                case COCOBOLO -> { return "Cocobolo"; }
+                case CEDAR -> { return "Cedar"; }
+                case ADIRONDACK -> { return "Adirondack"; }
+                case ALDER -> { return "Alder"; }
+                case SITKA -> { return "Sitka"; }
+                default -> { return "Unspecified"; }
+            }
+        }
+    }
 
     String serialNumber;
     double price;
-    String builder;
+    Builder builder;
     String model;
-    String type;
-    String backWood;
-    String topWood;
-    public Guitar(String newSerialNumber, double newPrice, String newBuilder, String newModel, String newType, String newBackWood, String newTopWood) {
+    Type type;
+    Wood backWood;
+    Wood topWood;
+    public Guitar(String newSerialNumber, double newPrice, Builder newBuilder, String newModel, Type newType, Wood newBackWood, Wood newTopWood) {
         serialNumber = newSerialNumber;
         price = newPrice;
         builder = newBuilder;
@@ -30,7 +72,7 @@ public class Guitar {
     }
 
     public void setBuilder(String builder) {
-        this.builder = builder;
+        this.builder = Builder.valueOf(builder);
     }
 
     public void setModel(String model) {
@@ -38,15 +80,30 @@ public class Guitar {
     }
 
     public void setType(String type) {
-        this.type = type;
+        try{
+            this.type = Type.valueOf(type);
+        }
+        catch (IllegalArgumentException e){
+            this.type = null;
+        }
     }
 
     public void setBackWood(String backWood) {
-        this.backWood = backWood;
+        try{
+            this.backWood = Wood.valueOf(backWood);
+        }
+        catch (IllegalArgumentException e){
+            this.backWood = null;
+        }
     }
 
     public void setTopWood(String topWood) {
-        this.topWood = topWood;
+        try{
+            this.topWood = Wood.valueOf(topWood);
+        }
+        catch (IllegalArgumentException e){
+            this.topWood = null;
+        }
     }
 
     public double getPrice(){
@@ -56,19 +113,19 @@ public class Guitar {
         price = newPrice;
     }
     public String getBuilder(){
-        return builder;
+        return builder.toString();
     }
     public String getModel(){
         return model;
     }
     public String getType(){
-        return type;
+        return type.toString();
     }
     public String getBackWood(){
-        return backWood;
+        return backWood.toString();
     }
     public String getTopWood(){
-        return topWood;
+        return topWood.toString();
     }
 
     @Override
