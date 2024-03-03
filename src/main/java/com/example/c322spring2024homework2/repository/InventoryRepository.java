@@ -36,8 +36,7 @@ public class InventoryRepository {
             pw.println(output);
         }
         catch (FileNotFoundException exception) {
-            // Dead Code
-            System.out.println("Unable to access guitars_database.txt");
+            System.out.printf("Unable to access %s\n", filePath.toString());
             return false;
         }
         // Successfully added guitar to database, now add to list as well
