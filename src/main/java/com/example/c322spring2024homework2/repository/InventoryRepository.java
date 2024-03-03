@@ -8,6 +8,8 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.PrintWriter;
 import java.lang.reflect.Field;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -16,7 +18,19 @@ import java.util.Objects;
 public class InventoryRepository {
     List<Guitar> guitars = new ArrayList<>();
     public boolean addGuitar(Guitar newGuitar){
-        File myFile = new File("src/main/java/com/example/c322spring2024homework2/guitars_database.txt");
+
+        // Define the directory and file names
+        String directoryName = "c322spring2024homework2";
+        String fileName = "guitars_database.txt";
+
+        // Create a Path object for the directory
+        Path directoryPath = Paths.get(directoryName);
+
+        // Combine the directory path and file name to create the full path
+        Path filePath = directoryPath.resolve(fileName);
+
+
+        File myFile = new File(String.valueOf(filePath));
         try(PrintWriter pw = new PrintWriter(new FileOutputStream(myFile, true))){
             String output = newGuitar.toString();
             pw.println(output);
