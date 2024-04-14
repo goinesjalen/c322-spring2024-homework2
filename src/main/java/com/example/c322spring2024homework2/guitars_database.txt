@@ -1,0 +1,10 @@
+0001, 129.99, Ryan, Fender, Electric, Cedar, Alder
+0001, 129.99, Ryan, Fender, Electric, Cedar, Alder
+0001, 129.99, Ryan, Fender, Electric, Cedar, Alder
+0001, 129.99, Ryan, Fender, Electric, Cedar, Alder
+0001, 129.99, Ryan, Fender, Electric, Cedar, Alder
+0001, 129.99, Ryan, Fender, Electric, Cedar, Alder
+0001, 129.99, Ryan, Fender, Electric, Cedar, Alder
+0001, 129.99, Ryan, Fender, Electric, Cedar, Alder
+0002, 129.99, Ryan, Fender, Acoustic, Cedar, Alder
+0003, 129.99, Ryan, Fender, Electric, Cedar, Alder
