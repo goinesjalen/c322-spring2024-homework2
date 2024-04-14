@@ -19,10 +19,9 @@ public class InventoryRepository {
     List<Guitar> guitars = new ArrayList<>();
     public boolean addGuitar(Guitar newGuitar){
         guitars.add(newGuitar);
-        writeToDB(newGuitar);
-        return true;
+        return writeToDB(newGuitar);
     }
-    private void writeToDB(Guitar newGuitar){
+    private boolean writeToDB(Guitar newGuitar){
         // Create a Path object for the directory
         Path filePath = Paths.get("src/main/java/com/example/c322spring2024homework2/guitars_database.txt");
 
@@ -34,6 +33,7 @@ public class InventoryRepository {
         catch (FileNotFoundException exception) {
             System.out.printf("Unable to access %s\n", filePath.toString());
         }
+        return true;
     }
     public Guitar getGuitar(String serialNumb){
         for (Guitar guitar : guitars) {

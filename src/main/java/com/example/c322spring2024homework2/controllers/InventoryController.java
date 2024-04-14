@@ -2,15 +2,19 @@ package com.example.c322spring2024homework2.controllers;
 
 import com.example.c322spring2024homework2.model.Guitar;
 import com.example.c322spring2024homework2.repository.InventoryRepository;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 public class InventoryController {
-    private InventoryRepository inventoryRepository;
-    public InventoryController(InventoryRepository inventoryRepository) {
+    private final InventoryRepository inventoryRepository;
+    private final AuthenticationManager authenticationManager;
+
+    public InventoryController(InventoryRepository inventoryRepository, AuthenticationManager authenticationManager) {
         this.inventoryRepository = inventoryRepository;
+        this.authenticationManager = authenticationManager;
     }
 
     @GetMapping("/search")
